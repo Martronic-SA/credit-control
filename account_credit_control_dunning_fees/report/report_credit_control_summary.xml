@@ -7,13 +7,15 @@
     </xpath>
     <xpath expr="//table[@id='summary_table']/tbody/tr/td[last()]" position="before">
       <td class="text-right">
-        <span t-field="l.dunning_fees_amount"/>
+        <span t-field="l.dunning_fees_amount"
+          t-options="{'widget': 'monetary',
+          'display_currency': 'l.currency_id or l.company_id.currency_id'}"/>
       </td>
     </xpath>
     <xpath expr="//span[@t-field='l.balance_due']" position="replace">
       <span t-field="l.balance_due_total"
-        t-field-options='{"widget": "monetary",
-        "display_currency": "l.currency_id or l.company_id.currency_id"}'/>
+        t-options="{'widget': 'monetary',
+        'display_currency': 'l.currency_id or l.company_id.currency_id'}"/>
     </xpath>
   </template>
 
