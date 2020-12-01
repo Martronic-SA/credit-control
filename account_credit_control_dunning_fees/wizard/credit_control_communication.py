@@ -3,7 +3,7 @@
 from odoo import models, api
 
 
-class CreditCommunication(models.TransientModel):
+class CreditCommunication(models.Model):
     _inherit = 'credit.control.communication'
 
     @api.model
